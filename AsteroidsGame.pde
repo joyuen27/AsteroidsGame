@@ -30,9 +30,7 @@ public void draw()
 public void keyPressed()
 {
   if (key == 'w' || key == 'W'){
-    if (spaceship.myXspeed <= 5 && spaceship.myYspeed <= 5){
-      spaceship.accelerate(0.5);
-    }
+    spaceship.accelerate(0.5);
   }
   if (key == 'a' || key == 'A'){
     spaceship.turn(-22.5);
@@ -41,9 +39,7 @@ public void keyPressed()
     spaceship.turn(22.5);
   }
   if (key == 's' || key == 'S'){
-    if (spaceship.myXspeed >= -5 && spaceship.myYspeed >= -5){
-      spaceship.accelerate(-0.5);
-    }
+    spaceship.accelerate(-0.5);
   }
   if (key == ' '){
     spaceship.hyperspace();
