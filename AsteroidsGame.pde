@@ -1,5 +1,5 @@
 Spaceship spaceship;
-ArrayList <Bullet> bList = new ArrayList<Bullet>();
+ArrayList <Bullet> bList = new ArrayList <Bullet>();
 Star[] stars = new Star[1000];
 ArrayList <Asteroid> aList = new ArrayList <Asteroid>();
 public void setup() 
