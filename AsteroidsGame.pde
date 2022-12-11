@@ -1,4 +1,5 @@
 Spaceship spaceship;
+ArrayList <Bullet> bList = new ArrayList<Bullet>();
 Star[] stars = new Star[1000];
 ArrayList <Asteroid> aList = new ArrayList <Asteroid>();
 public void setup() 
@@ -13,6 +14,8 @@ public void setup()
   for ( int i = 0; i < 5; i++){
     aList.add(new Asteroid());
   }
+  
+  
   
 }
 public void draw() 
@@ -34,9 +37,30 @@ public void draw()
   }
   
   
-  
-  spaceship.show();
   spaceship.move();
+  spaceship.show();
+  
+  for(int i = 0; i < bList.size()-1; i++){
+    bList.get(i).move();
+    bList.get(i).show();
+    
+    if (bList.get(i).getmyCenterX() >= 500 || bList.get(i).getmyCenterX() <= 0 ){
+      bList.remove(i);
+    }
+    if (bList.get(i).getmyCenterY() >= 500 || bList.get(i).getmyCenterY() <= 0 ){
+      bList.remove(i);
+    }
+    for (int j = 0; j < aList.size() - 1; j++){
+      float d = dist((float)(aList.get(j).getmyCenterX()), (float)(aList.get(j).getmyCenterX()), (float)(bList.get(i).getmyCenterX()), (float)(bList.get(i).getmyCenterY()));
+      if (d < 15){
+        aList.remove(j);
+        break;
+    }
+    }
+  }
+  
+
+  
   
   fill(255);
   text("myXPos: " + spaceship.myCenterX, 25,30);
@@ -60,7 +84,10 @@ public void keyPressed()
   if (key == 's' || key == 'S'){
     spaceship.accelerate(-0.05);
   }
-  if (key == ' '){
+  if (key == 'f'){
     spaceship.hyperspace();
+  }
+  if (key == ' '){
+    bList.add(new Bullet(spaceship));
   }
 }
