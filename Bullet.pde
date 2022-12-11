@@ -1,11 +1,11 @@
 class Bullet extends Floater {
   
-  public Bullet(Spaceship spaceship){
-    myCenterX = spaceship.getmyCenterX();
-    myCenterY = spaceship.getmyCenterY();
-    myXspeed = spaceship.getmyXspeed();
-    myYspeed = spaceship.getmyYspeed();
-    myPointDirection = spaceship.getmyPointDirection();
+  public Bullet(Spaceship whafdklafslkf){
+    myCenterX = whafdklafslkf.getmyCenterX();
+    myCenterY = whafdklafslkf.getmyCenterY();
+    myXspeed = whafdklafslkf.getmyXspeed();
+    myYspeed = whafdklafslkf.getmyYspeed();
+    myPointDirection = whafdklafslkf.getmyPointDirection();
     accelerate(2);
   }
   
